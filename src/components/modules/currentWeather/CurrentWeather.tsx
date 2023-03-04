@@ -24,18 +24,27 @@ export const CurrentWeather = () => {
     isPending: hourlyPending,
     error: hourlyError,
   } = UseFetch(`${forcastUrl}lat=${lat}&lon=${lon}${api_key}&units=metric`);
-  console.log(hourlyData);
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // const { latitude, longitude } = Currentlocation.state
   return (
-    <div className=" ">
-      {error && <div>{error}</div>}
-      {isPending && <Spinner />}
-      {udata && <WeatherCard wdata={udata} />}
+    <div className="flex justify-center h-full">
       <div>
-        <Search />
-        <SearchBox />
+        <div>
+          {error && <div>{error}</div>}
+          {isPending && <Spinner />}
+          {udata && <WeatherCard wdata={udata} />}
+        </div>
+        <div>
+          <Search />
+          <SearchBox />
+        </div>
+
+        <div>
+          {hourlyError && <div>{hourlyError}</div>}
+          {hourlyPending && <Spinner />}
+          {/* {hourlyData && <WeatherCard wdata={hourlyData.current} />} */}
+        </div>
       </div>
     </div>
   );
