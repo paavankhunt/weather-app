@@ -1,6 +1,5 @@
 export const WeatherCard = (props: any) => {
   const { wdata } = props;
-  console.log(wdata);
 
   return (
     <div>
