@@ -24,6 +24,7 @@ export const CurrentWeather = () => {
     isPending: hourlyPending,
     error: hourlyError,
   } = UseFetch(`${forcastUrl}lat=${lat}&lon=${lon}${api_key}&units=metric`);
+  console.log(hourlyData);
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // const { latitude, longitude } = Currentlocation.state

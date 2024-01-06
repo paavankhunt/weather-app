@@ -1,4 +1,4 @@
-import { useState, useEffect, SetStateAction } from 'react';
+import { useState, useEffect } from 'react';
 const defaultSettings = {
   enableHighAccuracy: false,
   timeout: Infinity,
